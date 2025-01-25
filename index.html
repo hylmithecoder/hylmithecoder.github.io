@@ -1,47 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Hylmi Mahdi</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bio Pribadi Saya">
+  <meta name="author" content="Nama Anda">
+  <title>Bio Pribadi | Hylmi Mahdi/title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <p>
-    <fieldset>
-        <p>
-        <label><a href="#">Home </a>|</label>
-        <label><a href="#">Contact </a>|</label>
-        <label><a href="#">Send</a></label>
-        <h2>Resume</h2>
-        </p>
-        <p>
-        <img src="Images/bocilhacker.jpg">
-        </p>
-        <p>
-            Hylmi Mahdi
-        </p>
-            <hr>
-        <p>
-            Google Programmer
-        </p>
-        <table border="1" cellpadding="5">
-            <tr>
-                <th>Skill</th>
-                <th>Pengalaman</th>
-            </tr>
-            <tr>
-                <td>
-                    * Sepuh Pemrograman PHP<br>
-                    * Sepuh Pemrograman Java<br>
-                    * Sepuh Pemrograman C<br>    
-                </td>
-                <td>
-                    * Orang Google<br>
-                    * Developer Hoyoverse<br>
-                </td>                
-            </tr>
-        </table>
-        <p class="copy">Copy Right &copy; ilmeee 2024</p>
-    </fieldset>
-    </p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hai, I Am <span class="highlight">Hylmi</span></h1>
+    <h2>A <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+  </header>
+  
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#about">Tentang Saya</a></li>
+      <li><a href="#experience">Pengalaman</a></li>
+      <li><a href="#projects">Proyek</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Kontak</a></li>
+    </ul>
+  </nav>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2>Tentang Saya</h2>
+    <p>Isi dengan informasi pribadi, pendidikan, dan minat Anda.</p>
+  </section>
+  
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Pengalaman</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>2023 - Sekarang</h3>
+          <p>Bekerja sebagai Front-end Developer di XYZ Company.</p>
+        </div>
+      </div>
+      <!-- Tambahkan item lainnya -->
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Proyek</h2>
+    <div class="portfolio-filters">
+      <button data-filter="all">Semua</button>
+      <button data-filter="web">Web Development</button>
+      <button data-filter="mobile">Mobile Apps</button>
+    </div>
+    <div class="portfolio-items">
+      <div class="item" data-category="web">
+        <!-- Konten Proyek -->
+      </div>
+      <!-- Tambahkan item lainnya -->
+    </div>
+  </section>
+  
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Blog</h2>
+    <p>Isi dengan artikel atau posting blog Anda.</p>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Kontak</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Nama" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Pesan" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Nama Anda. Semua Hak Cipta Dilindungi.</p>
+    <div class="social-icons">
+      <a href="https://github.com/username" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/username" target="_blank">LinkedIn</a>
+      <!-- Tambahkan ikon media sosial lainnya -->
+    </div>
+  </footer>
+  
+  <script>
+    // Animasi Hero Text
+    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+    gsap.from(".hero h2", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+    
+    // Script Toggle Mode (Mode Gelap/Terang)
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
 </body>
 </html>
